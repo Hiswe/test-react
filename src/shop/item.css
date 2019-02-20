@@ -1,0 +1,51 @@
+.shop {
+  padding: var(--gutter) 0;
+  color: var(--c-grey);
+}
+
+.shop + .shop {
+  border-top: 1px solid var(--c-grey);
+}
+.shop__item,
+.shop__name,
+.shop__full-address,
+.shop__offer,
+.shop__logo {
+  padding: 0;
+  margin: 0;
+}
+.shop__item {
+  display: grid;
+  grid-gap: 0 var(--gutter);
+  grid-template-columns: 5rem 1fr;
+  grid-template-areas:
+    'logo name'
+    'logo address'
+    'logo offer';
+}
+.shop__name {
+  grid-area: name;
+  text-transform: uppercase;
+}
+.shop__full-address {
+  grid-area: address;
+  font-size: 0.8em;
+}
+.shop__full-address p {
+  margin: 0;
+}
+.shop__offer {
+  grid-area: offer;
+  color: var(--c-accent);
+}
+.shop__logo {
+  grid-area: logo;
+  border: 1px solid var(--c-grey);
+  object-fit: contain;
+}
+
+.shop__logo img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

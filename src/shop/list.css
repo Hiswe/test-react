@@ -1,7 +1,7 @@
 .shops--loading,
 .shops--fetch-error {
   height: 100vh;
-  padding: 1rem;
+  padding: var(--gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,6 @@
 
 .shops__listing {
   list-style: none;
-  padding: 0;
+  padding: 0 var(--gutter);
   margin: 0;
 }

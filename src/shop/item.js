@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Price from '../ui/price'
+import './item.css'
 
 const BASE_CLASS = `shop`
 

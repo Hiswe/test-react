@@ -3,4 +3,6 @@
   --c-grey: #c4c4c4;
   --c-error: red;
   --c-error-lightest: LightPink;
+
+  --gutter: 1rem;
 }
