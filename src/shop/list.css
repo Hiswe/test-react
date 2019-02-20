@@ -1,5 +1,5 @@
-.shop-list--loading,
-.shop-list--fetch-error {
+.shops--loading,
+.shops--fetch-error {
   height: 100vh;
   padding: 1rem;
   display: flex;
@@ -8,9 +8,15 @@
   justify-content: center;
 }
 
-.shop-list--fetch-error {
+.shops--fetch-error {
   background: var(--c-error-lightest);
   color: var(--c-error);
   font-size: 2rem;
   text-align: center;
+}
+
+.shops__listing {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

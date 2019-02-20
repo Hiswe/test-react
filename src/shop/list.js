@@ -7,11 +7,12 @@ import Spinner from 'react-svg-spinner'
 
 import './list.css'
 import Button from '../ui/button'
+import ShopItem from './item'
 
 const ENDPOINT = `https://www.leshabitues.fr/testapi/shops`
 const REQUEST_TIMEOUT = 1000
 const AXIOS_OPTONS = { timeout: REQUEST_TIMEOUT }
-const BASE_CLASS = `shop-list`
+const BASE_CLASS = `shops`
 
 export default function ShopList(props) {
   const [shops, setShops] = useState([])
@@ -27,7 +28,6 @@ export default function ShopList(props) {
       const { results } = data
       if (!Array.isArray(results)) return setFetchError(true)
       setShops(results)
-      console.log(results)
     } catch (error) {
       // exercice dœsn't ask us to make something specific about timeout
       const isTimeout = error.code === `ECONNABORTED`
@@ -41,6 +41,7 @@ export default function ShopList(props) {
     [`${BASE_CLASS}--loading`]: loading && !fetchError,
     [`${BASE_CLASS}--fetch-error`]: !loading && fetchError,
   })
+  const listClass = `${BASE_CLASS}__listing`
 
   // • empty array to just use mount/unmount
   //   https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects
@@ -61,7 +62,11 @@ export default function ShopList(props) {
       ) : loading ? (
         <Spinner color="var(--c-accent)" size="128px" />
       ) : (
-        <ul />
+        <ul className={listClass}>
+          {shops.map(shop => (
+            <ShopItem shop={shop} key={shop.id} />
+          ))}
+        </ul>
       )}
     </section>
   )

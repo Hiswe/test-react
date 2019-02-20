@@ -21,7 +21,7 @@ class App extends Component {
     const { state } = this
     const { hasError } = state
     return (
-      <div className="App">
+      <main role="main" className="App">
         <Helmet>
           <title>Test React by Hiswe</title>
           <link
@@ -30,7 +30,7 @@ class App extends Component {
           />
         </Helmet>
         {hasError ? <h1>Something went wrong.</h1> : <ShopList />}
-      </div>
+      </main>
     )
   }
 }
