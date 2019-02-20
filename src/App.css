@@ -1,3 +1,6 @@
 .App {
   min-height: 100vh;
+  /* we have no indication of big device behaviour */
+  max-width: 600px;
+  margin: 0 auto;
 }
