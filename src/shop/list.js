@@ -4,6 +4,7 @@ import classNames from 'classnames'
 // get the most basic spinner component we can get
 // https://www.npmjs.com/package/react-svg-spinner
 import Spinner from 'react-svg-spinner'
+import { VelocityTransitionGroup } from 'velocity-react'
 
 import './list.css'
 import Button from '../ui/button'
@@ -54,7 +55,7 @@ export default function ShopList(props) {
     <section className={compClass}>
       {fetchError ? (
         <>
-          <p>Les habitués is currently unvailable</p>
+          <p>“Les habitués” is currently unvailable</p>
           <Button error onClick={fetchData}>
             retry
           </Button>
@@ -62,11 +63,15 @@ export default function ShopList(props) {
       ) : loading ? (
         <Spinner color="var(--c-accent)" size="128px" />
       ) : (
-        <ul className={listClass}>
+        <VelocityTransitionGroup
+          enter={{ animation: `fadeIn`, stagger: '15' }}
+          leave={{ animation: `fadeOut` }}
+          className={listClass}
+        >
           {shops.map(shop => (
             <ShopItem shop={shop} key={shop.id} />
           ))}
-        </ul>
+        </VelocityTransitionGroup>
       )}
     </section>
   )
