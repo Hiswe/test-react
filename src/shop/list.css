@@ -1,0 +1,16 @@
+.shop-list--loading,
+.shop-list--fetch-error {
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-list--fetch-error {
+  background: var(--c-error-lightest);
+  color: var(--c-error);
+  font-size: 2rem;
+  text-align: center;
+}

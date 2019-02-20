@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 
-import ShopList from './shop-list'
+import ShopList from './shop/list'
 
 import './App.css'
 
@@ -11,6 +11,7 @@ class App extends Component {
     this.state = { hasError: false }
   }
 
+  // global error handler
   static getDerivedStateFromError(error) {
     console.log(error)
     return { hasError: true }
