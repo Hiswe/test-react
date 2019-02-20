@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Helmet } from 'react-helmet'
 
 import ShopList from './shop-list'
 
@@ -12,7 +13,6 @@ class App extends Component {
 
   static getDerivedStateFromError(error) {
     console.log(error)
-    // Update state so the next render will show the fallback UI.
     return { hasError: true }
   }
 
@@ -21,6 +21,13 @@ class App extends Component {
     const { hasError } = state
     return (
       <div className="App">
+        <Helmet>
+          <title>Test React by Hiswe</title>
+          <link
+            href="https://fonts.googleapis.com/css?family=Lato"
+            rel="stylesheet"
+          />
+        </Helmet>
         {hasError ? <h1>Something went wrong.</h1> : <ShopList />}
       </div>
     )
